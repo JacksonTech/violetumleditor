@@ -21,6 +21,9 @@
 
 package com.horstmann.violet.product.diagram.usecase;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -34,6 +37,8 @@ import com.horstmann.violet.product.diagram.abstracts.property.BentStyle;
 import com.horstmann.violet.product.diagram.abstracts.property.LineStyle;
 import com.horstmann.violet.product.diagram.common.NoteEdge;
 import com.horstmann.violet.product.diagram.common.NoteNode;
+
+import javax.imageio.ImageIO;
 
 /**
  * A UML use case diagram.
@@ -62,6 +67,17 @@ public class UseCaseDiagramGraph extends AbstractGraph
         ActorNode actorNode = new ActorNode();
         actorNode.setToolTip(rs.getString("node0.tooltip"));
         NODE_PROTOTYPES.add(actorNode);
+
+        Image bob = null;
+        try {
+            bob = ImageIO.read(new File("/images/fatcloud.png"));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        RequirementsNode requirementsNode = new RequirementsNode(bob);
+        requirementsNode.setToolTip("HI GUYS I'M BOB"); // todo fix
+        NODE_PROTOTYPES.add(requirementsNode);
 
         UseCaseNode useCaseNode = new UseCaseNode();
         useCaseNode.setToolTip(rs.getString("node1.tooltip"));

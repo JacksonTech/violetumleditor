@@ -27,13 +27,13 @@ public class UseCaseDiagramPlugin implements IDiagramPlugin, Violet016FileFilter
     @Override
     public String getProvider()
     {
-        return "Alexandre de Pellegrin / Cays S. Horstmann";
+        return "Alexandre de Pellegrin / Cays S. Horstmann / Jon Tinney / Cody Jackson";
     }
 
     @Override
     public String getVersion()
     {
-        return "1.0.0";
+        return "1.0.0.42";
     }
 
     @Override
