@@ -70,14 +70,14 @@ public class UseCaseDiagramGraph extends AbstractGraph
 
         Image bob = null;
         try {
-            bob = ImageIO.read(new File("/images/fatcloud.png"));
+            bob = ImageIO.read(UseCaseDiagramGraph.class.getResource("/images/fatcloud.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        RequirementsNode requirementsNode = new RequirementsNode(bob);
-        requirementsNode.setToolTip("HI GUYS I'M BOB"); // todo fix
-        NODE_PROTOTYPES.add(requirementsNode);
+        SoftgoalNode softgoalNode = new SoftgoalNode(bob);
+        softgoalNode.setToolTip("HI GUYS I'M BOB"); // todo fix
+        NODE_PROTOTYPES.add(softgoalNode);
 
         UseCaseNode useCaseNode = new UseCaseNode();
         useCaseNode.setToolTip(rs.getString("node1.tooltip"));

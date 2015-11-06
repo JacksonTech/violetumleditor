@@ -21,29 +21,21 @@
 
 package com.horstmann.violet.product.diagram.usecase;
 
-import com.horstmann.violet.product.diagram.abstracts.node.RectangularNode;
 import com.horstmann.violet.product.diagram.abstracts.property.MultiLineString;
 import com.horstmann.violet.product.diagram.common.ImageNode;
-import com.horstmann.violet.product.diagram.common.NoteNode;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.geom.GeneralPath;
-import java.awt.geom.Point2D;
-import java.awt.geom.Rectangle2D;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * An actor node in a use case diagram.
  */
-public class RequirementsNode extends ImageNode
+public class SoftgoalNode extends ImageNode
 {
 
     /**
      * Construct an actor node with a default size and name
      */
-    public RequirementsNode(Image img) {
+    public SoftgoalNode(Image img) {
         super(img);
         name = new MultiLineString();
         name.setText("Requirement");
@@ -69,9 +61,9 @@ public class RequirementsNode extends ImageNode
         return name;
     }
 
-    public RequirementsNode clone()
+    public SoftgoalNode clone()
     {
-        RequirementsNode cloned = (RequirementsNode) super.clone();
+        SoftgoalNode cloned = (SoftgoalNode) super.clone();
         cloned.name = (MultiLineString) name.clone();
         return cloned;
     }
